@@ -60,7 +60,6 @@ function initGame() {
 
 // Шоог шидэх эвент листенер---------------------------------------------------------------------------------------------------
 document.querySelector(".btn-roll").addEventListener("click", function () {
-
     if (isNewGame === true) {
         // 1-6 доторхи санамсаргүй нэг тоо гаргаж авна
         var diceNumber = Math.floor(Math.random() * 6) + 1;
@@ -101,7 +100,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
         document.getElementById("score-" + activePlayer).textContent = scores[activePlayer];
 
         // Уг тоглогч хожсон эсэхийг шалгах (оноо нь 100-с их эсэх)
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= 100) {
             // Тоглоомыг дууссан төлөвт оруулна
             isNewGame = false; // ялагч боллоо гэхэд шинэ тоглоом нь худлаа болоод дууссан гэсэн үг 
             // Ялагч гэсэн текстийг нэрнийх нь оронд гаргана 
@@ -112,10 +111,6 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
             // Толглогчийн ээлжийг солино. 
             switchToNextPlayer();
         }
-
-        // Ээлжийн оноог нь 0 болгоно
-        // roundScore = 0;
-        // document.getElementById("current-" + activePlayer).textContent = "0";
     } else {
         alert("Тоглоом дууссан байна NEW GAME товчийг дарж шинээр эхлэнэ үү");
     }
